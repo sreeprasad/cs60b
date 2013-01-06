@@ -35,7 +35,6 @@ class OpenCommercial {
         String []array = new String[5];
         while ((inputLine = in.readLine()) != null){ 
             if(lineNumber>4) break;
-            System.out.println("line number "+lineNumber);
             array[lineNumber]=inputLine;
             lineNumber++;
           }
