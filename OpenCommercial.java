@@ -32,19 +32,18 @@ class OpenCommercial {
         BufferedReader in = new BufferedReader(new InputStreamReader(
                                     yc.getInputStream()));
         int lineNumber=0;
-        StringBuffer buf= new StringBuffer();
+        String []array = new String[5];
         while ((inputLine = in.readLine()) != null){ 
-            if(lineNumber>5) break;
-             buf.append(inputLine+"\n");
-             lineNumber++;
+            if(lineNumber>4) break;
+            System.out.println("line number "+lineNumber);
+            array[lineNumber]=inputLine;
+            lineNumber++;
           }
         in.close();
-        String []array = buf.toString().split("\n");
-        buf.delete(0, buf.length());
         for (int i=array.length-1;i>=0 ;i--) {
-          buf.append(array[i]+"\n");
+          System.out.println(array[i]);
         }
-        System.out.println(buf);
+        
          
      
   }
