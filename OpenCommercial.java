@@ -35,12 +35,17 @@ class OpenCommercial {
         StringBuffer buf= new StringBuffer();
         while ((inputLine = in.readLine()) != null){ 
             if(lineNumber>5) break;
-             buf.append(inputLine);
-             System.out.println("line number :"+lineNumber);
-            lineNumber++;
+             buf.append(inputLine+"\n");
+             lineNumber++;
           }
         in.close();
-        System.out.println(buf.reverse().toString());
+        String []array = buf.toString().split("\n");
+        buf.delete(0, buf.length());
+        for (int i=array.length-1;i>=0 ;i--) {
+          buf.append(array[i]+"\n");
+        }
+        System.out.println(buf);
+         
      
   }
 }
